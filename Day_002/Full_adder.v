@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:11:57 06/02/2023 
+// Create Date:    16:09:20 06/02/2023 
 // Design Name: 
-// Module Name:    Ripple_Carry_Adder 
+// Module Name:    Full_adder 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,13 +18,11 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Ripple_Carry_Adder(a,b,out);
-input [3:0] a,b;
-output [4:0] out;
-wire [3:0] c;
-Half_adder h1(a[0],b[0],out[0],c[0]);
-Full_adder F1(a[1],b[1],c[0],out[1],c[1]);
-Full_adder F2(a[2],b[2],c[1],out[2],c[2]);
-Full_adder F3(a[3],b[3],c[2],out[3],c[3]);
-assign out[4]=c[3];
+module Full_adder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+
+assign sum=a^b^c;
+assign carry=(a&b)|(b&c)|(c&a);
+
 endmodule

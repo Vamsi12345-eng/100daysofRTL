@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:11:57 06/02/2023 
+// Create Date:    17:35:17 06/02/2023 
 // Design Name: 
-// Module Name:    Ripple_Carry_Adder 
+// Module Name:    Decoder 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,13 +18,18 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Ripple_Carry_Adder(a,b,out);
-input [3:0] a,b;
-output [4:0] out;
-wire [3:0] c;
-Half_adder h1(a[0],b[0],out[0],c[0]);
-Full_adder F1(a[1],b[1],c[0],out[1],c[1]);
-Full_adder F2(a[2],b[2],c[1],out[2],c[2]);
-Full_adder F3(a[3],b[3],c[2],out[3],c[3]);
-assign out[4]=c[3];
+module Decoder(in,out);
+input [1:0] in;
+output reg [3:0] out;
+
+always@(in) begin
+case(in) 
+2'b00: out=4'b0001;
+2'b01: out=4'b0010;
+2'b10: out=4'b0100;
+2'b11: out=4'b1000;
+default: out=4'bxxxx;
+endcase
+end
+
 endmodule

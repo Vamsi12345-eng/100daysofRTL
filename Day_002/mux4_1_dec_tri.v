@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:11:57 06/02/2023 
+// Create Date:    17:33:38 06/02/2023 
 // Design Name: 
-// Module Name:    Ripple_Carry_Adder 
+// Module Name:    mux4_1_dec_tri 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,13 +18,21 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Ripple_Carry_Adder(a,b,out);
-input [3:0] a,b;
-output [4:0] out;
-wire [3:0] c;
-Half_adder h1(a[0],b[0],out[0],c[0]);
-Full_adder F1(a[1],b[1],c[0],out[1],c[1]);
-Full_adder F2(a[2],b[2],c[1],out[2],c[2]);
-Full_adder F3(a[3],b[3],c[2],out[3],c[3]);
-assign out[4]=c[3];
+module mux4_1_dec_tri(in,sel,out);
+
+input [3:0] in;
+input [1:0] sel;
+output out;
+wire t1,t2,t3,t4;
+wire out1,out2,out3,out4;
+
+Decoder d1(sel,{t4,t3,t2,t1});
+Tri_state_buff r1(in[0],t1,out);
+Tri_state_buff r2(in[1],t2,out);
+Tri_state_buff r3(in[2],t3,out);
+Tri_state_buff r4(in[3],t4,out);
+
+//assign out=out1+out2+out3+out4;
+
+
 endmodule
