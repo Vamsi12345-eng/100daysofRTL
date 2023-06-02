@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   18:14:19 06/02/2023
-// Design Name:   priority_encoder_8_3
-// Module Name:   priority_encoder_test.v
+// Create Date:   18:22:14 06/02/2023
+// Design Name:   mux4_1_dec_tri
+// Module Name:   mux_4_1_dec_tri_test.v
 // Project Name:  day_002
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: priority_encoder_8_3
+// Verilog Test Fixture created by ISE for module: mux4_1_dec_tri
 //
 // Dependencies:
 // 
@@ -22,31 +22,35 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module priority_encoder_test_v;
+module mux_4_1_dec_tri_test_v;
 
 	// Inputs
-	reg [7:0] in;
+	reg [3:0] in;
+	reg [1:0] sel;
 
 	// Outputs
-	wire [2:0] out;
+	wire out;
 
 	// Instantiate the Unit Under Test (UUT)
-	priority_encoder_8_3 uut (
+	mux4_1_dec_tri uut (
 		.in(in), 
+		.sel(sel), 
 		.out(out)
 	);
-
-   integer i;
+integer i;
 	initial begin
 		// Initialize Inputs
-		in = 0;
+		in = 4'b1110;
+		sel = 0;
 
+      for(i=0;i<=3;i=i+1) begin
+		
 		#10
-		for(i=0;i<=256;i=i+1) begin
-		#10
-		in=i;
+		sel=i;
 		end
-		#25
+		
+		
+		#10
 		$finish;
 
 	end

@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   18:14:19 06/02/2023
-// Design Name:   priority_encoder_8_3
-// Module Name:   priority_encoder_test.v
+// Create Date:   16:22:23 06/02/2023
+// Design Name:   Ripple_Carry_Adder
+// Module Name:   Ripple_Carry_Adder_Test.v
 // Project Name:  day_002
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: priority_encoder_8_3
+// Verilog Test Fixture created by ISE for module: Ripple_Carry_Adder
 //
 // Dependencies:
 // 
@@ -22,32 +22,35 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module priority_encoder_test_v;
+module Ripple_Carry_Adder_Test_v;
 
 	// Inputs
-	reg [7:0] in;
+	reg [3:0] a;
+	reg [3:0] b;
 
 	// Outputs
-	wire [2:0] out;
+	wire [4:0] out;
 
 	// Instantiate the Unit Under Test (UUT)
-	priority_encoder_8_3 uut (
-		.in(in), 
+	Ripple_Carry_Adder uut (
+		.a(a), 
+		.b(b), 
 		.out(out)
 	);
-
-   integer i;
+ integer i;
 	initial begin
 		// Initialize Inputs
-		in = 0;
-
-		#10
-		for(i=0;i<=256;i=i+1) begin
-		#10
-		in=i;
-		end
-		#25
-		$finish;
+		a = 0;
+		b = 0;
+    for(i=0;i<=8;i=i+1) begin
+	 #15
+	 a=i;
+	 b=i+4;
+	 end
+	 
+	 #25
+	 $finish;
+		
 
 	end
       
