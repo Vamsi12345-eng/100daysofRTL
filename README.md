@@ -24,3 +24,10 @@ Day_003: ALU with 4 opcode instructions
 3. Multiplication
 4. Bitwise Xor Opeartion
 
+Day_004 : Design and tested below mentioned logics:
+1. D Flip flop using behavoral level modelling.
+2. T flip flop using D flip flop.
+3. 4 bit Synchronous Loadable up counter.
+
+
+
