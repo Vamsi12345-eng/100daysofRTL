@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   09:52:38 06/05/2023
-// Design Name:   D_FF
-// Module Name:   D_FF_test.v
+// Create Date:   10:59:12 06/05/2023
+// Design Name:   Bit_4_Load_Counter
+// Module Name:   Bit_4_Load_Counter_test.v
 // Project Name:  day_004
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: D_FF
+// Verilog Test Fixture created by ISE for module: Bit_4_Load_Counter
 //
 // Dependencies:
 // 
@@ -22,60 +22,44 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module D_FF_test_v;
+module Bit_4_Load_Counter_test_v;
 
 	// Inputs
+	reg [3:0] Load_in;
 	reg clk;
 	reg rst;
-	reg D_in;
 
 	// Outputs
-	wire D_out;
+	wire [3:0] counter_out;
 
 	// Instantiate the Unit Under Test (UUT)
-	D_FF uut (
+	Bit_4_Load_Counter uut (
+		.Load_in(Load_in), 
 		.clk(clk), 
 		.rst(rst), 
-		.D_in(D_in), 
-		.D_out(D_out)
+		.counter_out(counter_out)
 	);
 
 	initial begin
 		// Initialize Inputs
+		Load_in = 4'dz;
 		clk = 0;
 		rst = 0;
-		D_in = 0;
 
+      #10
+		rst=1;
 		
 		#10;
-		rst = 0;
-		D_in = 1;
+		rst=0;
+		#10
+		Load_in=4'd10;
+		#10
+		Load_in=4'dx;
 		
-		#13;
-		rst = 1;
-		D_in = 1;
-
-      
-		#5;
-		rst = 0;
-		D_in = 0;
-
-
-
-      #25;
-		rst = 0;
-		D_in = 1;
-
-      #10;
-		rst = 1;
-		D_in = 1;
-		
-		#14
+		#100
 		$stop;
 
-
-
 	end
-   always #5 clk=~clk;   
+     always #5 clk=~clk; 
 endmodule
 
