@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    09:48:09 06/05/2023 
+// Create Date:    10:00:36 06/05/2023 
 // Design Name: 
-// Module Name:    D_FF 
+// Module Name:    T_ff 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,19 +18,13 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module D_FF(clk,rst,D_in,D_out);
-input D_in;
+module T_ff(clk,rst,T_in,T_out);
+
 input clk,rst;
-output reg D_out;
-
-always@(posedge clk) begin
-if(rst) begin
-D_out<=1'b0;
-end
-else begin
-D_out<=D_in;
-end
-end
-
+input T_in;
+output T_out;
+wire temp;
+assign temp=~T_in;
+D_FF d1(clk,rst,temp,T_out);
 
 endmodule

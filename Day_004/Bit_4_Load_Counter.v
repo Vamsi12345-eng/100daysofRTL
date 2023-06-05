@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    09:48:09 06/05/2023 
+// Create Date:    10:25:23 06/05/2023 
 // Design Name: 
-// Module Name:    D_FF 
+// Module Name:    Bit_4_Load_Counter 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,19 +18,25 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module D_FF(clk,rst,D_in,D_out);
-input D_in;
+module Bit_4_Load_Counter(Load_in,clk,rst,counter_out);
+
+input [3:0] Load_in;
 input clk,rst;
-output reg D_out;
+output reg [3:0] counter_out;
+//reg [3:0] counter;
 
 always@(posedge clk) begin
+
 if(rst) begin
-D_out<=1'b0;
+counter_out<=0;
+end
+else if(Load_in>=0 && Load_in<=15) begin
+counter_out<=Load_in;
 end
 else begin
-D_out<=D_in;
-end
+counter_out<=counter_out+1;
 end
 
+end
 
 endmodule
