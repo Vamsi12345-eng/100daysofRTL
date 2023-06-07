@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:43:29 06/06/2023 
+// Create Date:    01:01:36 06/06/2023 
 // Design Name: 
-// Module Name:    SR_latch 
+// Module Name:    JK_FF 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,13 +18,30 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module SR_latch(S_in,R_in,Q_out,Q_not_out);
+module JK_FF(J_in,K_in,clk,rst,JK_out);
 
-input S_in,R_in;
-output Q_out,Q_not_out;
+input J_in,K_in;
+input clk,rst;
 
-nor n1(Q_out,R_in,Q_not_out);
-nor n2(Q_not_out,S_in,Q_out);
+output reg JK_out=0;
+
+always@(posedge clk) begin
+
+if(rst) begin
+JK_out<=0;
+end
+else begin
+case({J_in,K_in})
+2'b00:JK_out<=JK_out;
+2'b01:JK_out<=1'b0;
+2'b10:JK_out<=1'b1;
+2'b11:JK_out<=~JK_out;
+default:JK_out<=1'bx;
+endcase
+end
+
+
+end
 
 
 endmodule
