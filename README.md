@@ -29,12 +29,13 @@ Day_004 : Design and tested below mentioned logics:
 2. T flip flop using D flip flop.
 3. 4 bit Synchronous Loadable up counter.
 
-Day_005: Verilog code for sequence detector which detects the sequence - "1 0 1".
 
 Day_005 : Design and tested below mentioned logics:
 1. JK flipflop.
 2. SR latch using Gate level modelling.
 3. 4- bit MOD-12 asynchronous up counter using T- Flip FLop.
+
+Day_006: Verilog code for sequence detector which detects the sequence - "1 0 1".
 
 
 
