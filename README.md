@@ -37,6 +37,10 @@ Day_005 : Design and tested below mentioned logics:
 
 Day_006: Verilog code for sequence detector which detects the sequence - "1 0 1".
 
+Day_007: Design and tested below mentioned logic:
+1. 4 - Bit synchronous up/down counter.
+2. 4 - Bit SISO.
+
 
 
 
