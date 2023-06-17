@@ -41,6 +41,10 @@ Day_007: Design and tested below mentioned logic:
 1. 4 - Bit synchronous up/down counter.
 2. 4 - Bit SISO.
 
+Day_008: Mini vending machine(A prototype).
+
+
+
 
 
 
