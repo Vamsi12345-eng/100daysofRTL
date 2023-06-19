@@ -43,6 +43,8 @@ Day_007: Design and tested below mentioned logic:
 
 Day_008: Mini vending machine(A prototype).
 
+Day_009: 16*8 Single Port RAM.
+
 
 
 
