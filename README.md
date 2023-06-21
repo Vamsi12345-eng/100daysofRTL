@@ -45,6 +45,8 @@ Day_008: Mini vending machine(A prototype).
 
 Day_009: 16*8 Single Port RAM.
 
+Day_010: 16*8 Dual port RAM.
+
 
 
 
