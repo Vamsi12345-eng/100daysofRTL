@@ -47,6 +47,8 @@ Day_009: 16*8 Single Port RAM.
 
 Day_010: 16*8 Dual port RAM.
 
+Day_011: Automatic Traffic Light Controller.
+
 
 
 
