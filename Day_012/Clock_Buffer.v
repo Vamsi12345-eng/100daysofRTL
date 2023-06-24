@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    10:54:13 06/24/2023 
+// Create Date:    10:54:01 06/24/2023 
 // Design Name: 
-// Module Name:    D_FF 
+// Module Name:    Clock_Buffer 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,23 +18,11 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module D_FF(D_in,clk,rst,D_out);
+module Clock_Buffer(clk_in,clk_out);
 
-input D_in;
-input clk,rst;
-output reg D_out;
+input clk_in;
+output clk_out;
 
-wire clk_out;
-
-Clock_Buffer B(clk,clk_out);
-
-always@(posedge clk_out) begin
-if(rst) begin
-D_out<=0;
-end
-else begin
-D_out<=D_in;
-end
-end
+assign clk_out=clk_in;
 
 endmodule
