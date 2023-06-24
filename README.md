@@ -49,6 +49,8 @@ Day_010: 16*8 Dual port RAM.
 
 Day_011: Automatic Traffic Light Controller.
 
+Day_012: Clock Buffer With D flip Flop.
+
 
 
 
