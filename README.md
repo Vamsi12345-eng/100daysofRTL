@@ -53,6 +53,11 @@ Day_012: Clock Buffer With D flip Flop.
 
 Day_013: Radix-4 Booth Multiplier for signed numbers.
 
+Day_014: Carry Look Ahead Adder.
+
+Day_015 & Day_016 : 8- Bit Vedic Multiplier.
+
+Day_017 : Linear Feed-Back Shift Register.
 
 
 
