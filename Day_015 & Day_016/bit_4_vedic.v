@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    19:52:45 07/03/2023 
+// Create Date:    19:41:22 07/03/2023 
 // Design Name: 
-// Module Name:    bit_8_vedic 
+// Module Name:    bit_4_vedic 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,19 +18,18 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module bit_8_vedic(in1,in2,out);
+module bit_4_vedic(in1,in2,out);
 
-input [7:0] in1,in2;
-output [15:0] out;
+input [3:0] in1,in2;
+output [7:0] out;
 
-wire [7:0] pp1,pp2,pp3,pp4;
+wire [3:0] pp1,pp2,pp3,pp4;
 
-bit_4_vedic a1(in1[3:0],in2[3:0],pp1);
-bit_4_vedic a2(in1[3:0],in2[7:4],pp2);
-bit_4_vedic a3(in1[7:4],in2[3:0],pp3);
-bit_4_vedic a4(in1[7:4],in2[7:4],pp4);
+bit_2_vedic b1(in1[1:0],in2[1:0],pp1);
+bit_2_vedic b2(in1[1:0],in2[3:2],pp2);
+bit_2_vedic b3(in1[3:2],in2[1:0],pp3);
+bit_2_vedic b4(in1[3:2],in2[3:2],pp4);
 
-assign out=pp1+{pp2,4'b0000}+{pp3,4'b0000}+{pp4,8'b00000000};
-
+assign out=pp1+{pp2,2'b00}+{pp3,2'b00}+{pp4,4'b0000};
 
 endmodule
