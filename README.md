@@ -59,6 +59,8 @@ Day_015 & Day_016 : 8- Bit Vedic Multiplier.
 
 Day_017 : Linear Feed-Back Shift Register.
 
+Day_018 : Binary to Grey code || Grey code to binary conversion.
+
 
 
 
