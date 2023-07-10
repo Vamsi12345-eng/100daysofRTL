@@ -61,6 +61,8 @@ Day_017 : Linear Feed-Back Shift Register.
 
 Day_018 : Binary to Grey code || Grey code to binary conversion.
 
+Day_019 : UART PROTOCOL USING VERILOG HDL.
+
 
 
 
