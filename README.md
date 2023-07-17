@@ -65,6 +65,8 @@ Day_019 & 020 & 021 & 022 : UART PROTOCOL USING VERILOG HDL.
 
 Day_023 : fibonacci series using verilog hdl.
 
+Day_024 : 16*32 FIFO using CHATgpt!
+
 
 
 
