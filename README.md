@@ -67,6 +67,8 @@ Day_023 : fibonacci series using verilog hdl.
 
 Day_024 : 16*32 FIFO using CHATgpt!
 
+Day_025 : PWM for controlling light brightness.
+
 
 
 
